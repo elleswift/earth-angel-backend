@@ -32,7 +32,7 @@ app.delete('/remove-wish', async (req, res) => {
   res.json('Wish removed')
 }) 
 
-app.put('/', async (req, res) => {
+app.put('/update-wish', async (req, res) => {
   console.log(req.query)
   await wishes.findOneAndUpdate(req.query, {$set:req.body})
   res.json('Wish updated')
